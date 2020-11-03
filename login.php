@@ -41,6 +41,7 @@
                                                 $row = mysqli_fetch_assoc($result);
                                                 $_SESSION['name'] = $row['name'];
                                                 $_SESSION['id'] = $row['id'];
+                                                $_SESSION['sEmail'] = $row['email'];
                                                 $_SESSION['email'] = $_POST['email'];
                                                 header("location:dashboard.php");
                                             }

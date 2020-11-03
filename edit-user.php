@@ -19,6 +19,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   </head>
   <body>
+  <div class ="col-lg-7 text-center"><br>
+      <button class="btn-primary btn" id="logout"> <a href="dashboard.php?logout" class="text-white">View User </a></button>
+    </div>
     <div class="col-lg-6 m-auto">
       <form method="post"><br><br>
         <div class="card">

@@ -55,10 +55,9 @@
               $dbCreatedAt=$res['created_at'];
               $dbUpdatedAt=$res['updated_at'];
               $userId = $_SESSION['id'];
-              $flag ="";
-              if($dbId == $userId)
+              if(!($userId == $dbId))
               {
-                $flag = "disabled";
+                $flag ="pointer-events:none;";
               }
           ?>
                 <tr class="text-center">
@@ -67,7 +66,7 @@
                   <td> <?php echo $dbEmail; ?> </td>
                   <td> <?php echo $dbCreatedAt; ?> </td>
                   <td> <?php echo $dbUpdatedAt; ?> </td>
-                  <td> <button class=" btn-primary btn".$flag onclick="update()" > <a href="edit-user.php?id=<?php echo $res['id']; ?>" class="text-white"> Update </a></button>&nbsp<button class="btn-danger btn" onclick=" deleted()"> <a href="delete.php?id=<?php echo $res['id']; ?>" class="text-white"> Delete </a></button></td>
+                  <td> <a href="edit-user.php?id=<?php echo $dbId; ?>" class="text-white btn-primary btn" onclick="update()"> Edit </a>&nbsp<a href="delete.php?id=<?php echo $res['id']; ?>" class="text-white btn-danger btn" onclick=" deleted()" style='<?php echo $flag; ?>'> Delete </a></td>
                 </tr>
           <?php 
             }
