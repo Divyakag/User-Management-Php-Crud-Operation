@@ -54,8 +54,8 @@
               $dbEmail=$res['email'];
               $dbCreatedAt=$res['created_at'];
               $dbUpdatedAt=$res['updated_at'];
-              $userId = $_SESSION['id'];
-              if(!($userId == $dbId))
+              $u_Email = $_SESSION['email'];
+              if(($u_Email == $dbEmail))
               {
                 $flag ="pointer-events:none;";
               }
@@ -66,7 +66,8 @@
                   <td> <?php echo $dbEmail; ?> </td>
                   <td> <?php echo $dbCreatedAt; ?> </td>
                   <td> <?php echo $dbUpdatedAt; ?> </td>
-                  <td> <a href="edit-user.php?id=<?php echo $dbId; ?>" class="text-white btn-primary btn" onclick="update()"> Edit </a>&nbsp<a href="delete.php?id=<?php echo $res['id']; ?>" class="text-white btn-danger btn" onclick=" deleted()" style='<?php echo $flag; ?>'> Delete </a></td>
+                  <td> <a href="edit-user.php?id=<?php echo $dbId; ?>" class="text-white btn-primary btn" onclick="update()"> Edit </a>&nbsp
+                       <a href="delete.php?id=<?php echo $res['id']; ?>" class="text-white btn-danger btn" onclick=" deleted()"> Delete </a></td>
                 </tr>
           <?php 
             }
