@@ -38,6 +38,17 @@
           $userName = $_POST["username"];
           $userEmail = $_POST["email"];
           $userPassword = $_POST["password"];
+          $query = "SELECT email from users where email ='$userEmail' ";
+          $executeQuery = $conn->query($query);
+          if($executeQuery->num_rows >0)
+          {
+            $array = $executeQuery->fetch_assoc();
+            if($userEmail==isset($array['email']))
+            {
+              echo "<h6 style='color:red'>Email Already Exist</h6>";
+              die;
+            }
+          }
           if(empty($userName))
           {
             echo "<h6 style='color:red'>User Name is required</h6>";
