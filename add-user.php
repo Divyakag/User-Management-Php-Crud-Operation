@@ -69,7 +69,6 @@
             {
               die('Error: ' . $conn->error);
             }
-              //echo "Successfull";
               header('location:dashboard.php');
               exit();
           }

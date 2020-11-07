@@ -35,6 +35,7 @@
       <div class="col-lg-12"><br>
         <h5 class="text-warning text-center" > Display Table Data </h5><br>
         <button class="btn-primary btn"> <a href="add-user.php" class="text-white"> Add User </a> </button><br><br>
+        <button class="btn-primary btn"> <a href="product.php" class="text-white"> View Products </a> </button><br><br>
         <table  id="tabledata" class=" table table-striped table-hover table-bordered">
           <tr class="bg-dark text-white text-center">
             <th> User Id</th>
